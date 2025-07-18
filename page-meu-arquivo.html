@@ -19,34 +19,29 @@ Template Name: Minha Página Pura
       EasyJur - Software Jurídico com IA para Escritórios de Advocacia
     </title>
 
-    <!-- Preload de imagem e fontes -->
+    <!-- Preload otimizado -->
     <link
       rel="preload"
-      as="image"
-      href="https://easyjur.com/wp-content/uploads/2024/07/logo-easyjur-01.png"
-      media="(min-width: 768px)"
-    />
-    <link
-      rel="preload"
-      as="image"
-      href="https://easyjur.com/wp-content/uploads/2025/03/logo-easyjur-06_1.svg"
-      media="(max-width: 767px)"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    /></noscript>
 
     <style>
       /*! Reset Otimizado */
-      .easyjur-main,
-      .easyjur-main::before,
-      .easyjur-main::after,
-      .easyjur-main *,
-      .easyjur-main *::before,
-      .easyjur-main *::after {
+      :where(
+          .easyjur-main,
+          .easyjur-main::before,
+          .easyjur-main::after,
+          .easyjur-main *,
+          .easyjur-main *::before,
+          .easyjur-main *::after
+        ) {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
@@ -66,16 +61,15 @@ Template Name: Minha Página Pura
         font-family: "Inter", system-ui, sans-serif;
         color: var(--easyjur-black);
         background: var(--easyjur-white);
+        line-height: 1.5;
       }
 
       body.easyjur-main {
         min-height: 100vh;
         overflow-x: hidden;
-        line-height: 1.5;
       }
 
-      .easyjur-main img,
-      picture {
+      .easyjur-main img {
         max-width: 100%;
         height: auto;
         display: block;
@@ -86,6 +80,7 @@ Template Name: Minha Página Pura
         color: inherit;
       }
 
+      /* Header */
       .easyjur-main__header {
         --header-height: 5rem;
         position: sticky;
@@ -107,17 +102,10 @@ Template Name: Minha Página Pura
         padding: 0 1rem;
       }
 
-      .easyjur-main__logo-link {
-        display: inline-block;
-        line-height: 0;
-      }
-
+      /* I - Seção */
       .easyjur-main-hero-banner {
         position: relative;
-        background: var(
-          --easyjur-gradient-light,
-          linear-gradient(90deg, #f5f5f5 0%, #d9d9d9 100%)
-        );
+        background: linear-gradient(90deg, #f5f5f5 0%, #d9d9d9 100%);
         padding: 4rem 0 10rem;
         min-height: 80vh;
         display: flex;
@@ -153,7 +141,6 @@ Template Name: Minha Página Pura
         padding: 0.75rem 2rem;
         border: solid 2px var(--easyjur-red);
         color: var(--easyjur-red);
-        border-radius: 0.25rem;
         font-weight: 600;
         transition: all 0.3s ease;
         border-radius: 40px;
@@ -174,15 +161,7 @@ Template Name: Minha Página Pura
         z-index: 1;
       }
 
-      .easyjur-hero-img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        object-position: right bottom;
-        transition: transform 0.3s ease;
-      }
-
-      /*Seção 2*/
+      /* II - Seção */
       .easyjur-section--contextual {
         padding: 4rem 0;
         background: var(--easyjur-off-white);
@@ -210,12 +189,6 @@ Template Name: Minha Página Pura
         margin-bottom: 1rem;
       }
 
-      .easyjur-section__content p {
-        font-size: 1.125rem;
-        color: var(--easyjur-text);
-        margin-bottom: 1rem;
-      }
-
       .easyjur-feature-cards {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -235,13 +208,60 @@ Template Name: Minha Página Pura
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.02);
       }
 
-      .easyjur-feature-card p {
-        font-size: 1rem;
-        color: var(--easyjur-text);
-        margin: 0;
+      /* III - Seção */
+      .easyjur-platform-section {
+        padding: 4rem 0;
+        background: var(--easyjur-red);
       }
 
-      /*Media Queries*/
+      .easyjur-platform-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .easyjur-platform-content h2 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        margin-bottom: 1.5rem;
+        color: var(--easyjur-white);
+      }
+
+      .easyjur-platform-content p {
+        margin-bottom: 1.5rem;
+        color: var(--easyjur-white);
+      }
+
+      .easyjur-main-white__cta-button {
+        display: inline-block;
+        padding: 0.75rem 2rem;
+        border: solid 2px var(--easyjur-red);
+        color: var(--easyjur-red);
+        background: var(--easyjur-white);
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border-radius: 40px;
+      }
+
+      .easyjur-platform-boxes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+
+      .easyjur-platform-box {
+        background: var(--easyjur-off-white);
+        border-radius: 12px;
+        padding: 1.5rem;
+        border: 1px solid var(--easyjur-border);
+        transition: transform 0.3s ease;
+      }
+
+      .easyjur-platform-box:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Media Queries */
       @media (min-width: 1024px) and (max-width: 1440px) {
         .easyjur-hero-image-wrapper {
           width: 42%;
@@ -263,6 +283,11 @@ Template Name: Minha Página Pura
           flex-direction: column;
           align-items: flex-start;
         }
+
+        .easyjur-platform-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
       }
 
       @media (max-width: 767px) {
@@ -274,13 +299,8 @@ Template Name: Minha Página Pura
           min-height: 90vh;
         }
 
-        .easyjur-hero-content {
-          text-align: center;
-          margin: 0 auto;
-        }
-
-        .easyjur-main__cta-button {
-          margin: 0 auto;
+        .easyjur-platform-boxes {
+          grid-template-columns: 1fr;
         }
       }
     </style>
@@ -306,7 +326,6 @@ Template Name: Minha Página Pura
                 width="180"
                 height="40"
                 loading="eager"
-                decoding="async"
               />
             </picture>
           </a>
@@ -348,7 +367,6 @@ Template Name: Minha Página Pura
               srcset="
                 https://easyjur.com/wp-content/uploads/2025/02/Group-1000003547.png
               "
-              type="image/png"
             />
             <img
               src="https://easyjur.com/wp-content/uploads/2025/02/Group-1000003562.png"
@@ -356,7 +374,6 @@ Template Name: Minha Página Pura
               width="680"
               height="620"
               loading="eager"
-              decoding="async"
               class="easyjur-hero-img"
             />
           </picture>
@@ -368,18 +385,14 @@ Template Name: Minha Página Pura
         aria-labelledby="contextual-heading"
       >
         <div class="easyjur-main__container easyjur-section__grid">
-          <!-- Imagem -->
           <div class="easyjur-section__image-wrapper">
-            <picture>
-              <img
-                src="https://easyjur.com/wp-content/uploads/2025/02/Group-1000003548-1.png"
-                alt="Profissional sorrindo, representando liderança feminina jurídica"
-                width="480"
-                height="480"
-                loading="lazy"
-                decoding="async"
-              />
-            </picture>
+            <img
+              src="https://easyjur.com/wp-content/uploads/2025/02/Group-1000003548-1.png"
+              alt="Profissional sorrindo, representando liderança feminina no setor jurídico"
+              width="480"
+              height="480"
+              loading="lazy"
+            />
           </div>
 
           <div class="easyjur-section__content">
@@ -389,7 +402,7 @@ Template Name: Minha Página Pura
             <p>
               Os softwares jurídicos tradicionais, que por décadas dominaram a
               gestão de escritórios e departamentos jurídicos, agora são
-              verdadeiros “dinossauros tecnológicos” incapazes de acompanhar as
+              verdadeiros "dinossauros tecnológicos" incapazes de acompanhar as
               demandas de um mercado jurídico em constante transformação.
             </p>
             <p>
@@ -405,7 +418,7 @@ Template Name: Minha Página Pura
           <div class="easyjur-feature-card">
             <img
               src="https://easyjur.com/wp-content/uploads/2025/07/cloud-ico-1.svg"
-              alt=""
+              alt="Ícone de nuvem representando integração em nuvem e armazenamento seguro"
               width="40"
               height="40"
               loading="lazy"
@@ -418,7 +431,7 @@ Template Name: Minha Página Pura
           <div class="easyjur-feature-card">
             <img
               src="https://easyjur.com/wp-content/uploads/2025/02/robotic-face.svg"
-              alt=""
+              alt="Ícone de robô representando automação de processos jurídicos"
               width="40"
               height="40"
               loading="lazy"
@@ -431,7 +444,7 @@ Template Name: Minha Página Pura
           <div class="easyjur-feature-card">
             <img
               src="https://easyjur.com/wp-content/uploads/2025/02/chart-fraction.svg"
-              alt=""
+              alt="Ícone de gráfico representando análise financeira e relatórios"
               width="40"
               height="40"
               loading="lazy"
@@ -444,7 +457,7 @@ Template Name: Minha Página Pura
           <div class="easyjur-feature-card">
             <img
               src="https://easyjur.com/wp-content/uploads/2025/02/rocket-frame.svg"
-              alt=""
+              alt="Ícone de foguete representando alta performance e crescimento"
               width="40"
               height="40"
               loading="lazy"
@@ -456,6 +469,67 @@ Template Name: Minha Página Pura
           </div>
         </div>
       </section>
+
+      <section
+        class="easyjur-platform-section"
+        aria-labelledby="platform-heading"
+      >
+        <div class="easyjur-main__container easyjur-platform-grid">
+          <div class="easyjur-platform-content">
+            <h2 id="platform-heading">
+              Tudo que você precisa em uma única plataforma
+            </h2>
+            <p>
+              Integramos todas as soluções que seu escritório precisa para
+              gestão jurídica, financeira e estratégica em um único sistema
+              inteligente.
+            </p>
+            <a
+              href="/agendar-demo"
+              class="easyjur-main-white__cta-button"
+              aria-label="Agende uma demonstração gratuita da plataforma"
+            >
+              QUERO CONHECER A EASYJUR
+            </a>
+          </div>
+
+          <div class="easyjur-platform-boxes">
+            <div class="easyjur-platform-box">
+              <h3>Gestão de Contencioso e Consultivo</h3>
+              <p>
+                Centralize e gerencie todos os processos contenciosos e
+                consultivos de forma eficiente.
+              </p>
+            </div>
+            <div class="easyjur-platform-box">
+              <h3>Produção de Documentos Jurídicos</h3>
+              <p>
+                Crie e personalize documentos jurídicos com agilidade e precisão
+              </p>
+            </div>
+            <div class="easyjur-platform-box">
+              <h3>Gestão Financeira e Internet Bankings</h3>
+              <p>
+                Controle suas finanças e integre bancos para uma gestão
+                completa.
+              </p>
+            </div>
+            <div class="easyjur-platform-box">
+              <h3>Gestão Comercial Estratégica</h3>
+              <p>
+                Monitore e otimize suas estratégias comerciais com dados em
+                tempo real.
+              </p>
+            </div>
+            <div class="easyjur-platform-box">
+              <h3>Contratação e Gestão de Correspondentes</h3>
+              <p>
+                Facilite a contratação e gestão de correspondentes jurídicos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Schema Markup -->
@@ -464,9 +538,18 @@ Template Name: Minha Página Pura
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "EasyJur",
+        "image": "https://easyjur.com/wp-content/uploads/2024/07/logo-easyjur-01.png",
         "description": "Plataforma de gestão jurídica com inteligência artificial para escritórios de advocacia",
         "url": "https://easyjur.com",
-        "logo": "https://easyjur.com/wp-content/uploads/2024/07/logo-easyjur-01.png",
+        "telephone": "+5511999999999",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Paulista, 1000",
+          "addressLocality": "São Paulo",
+          "addressRegion": "SP",
+          "postalCode": "01310-100",
+          "addressCountry": "BR"
+        },
         "sameAs": [
           "https://facebook.com/easyjur",
           "https://linkedin.com/company/easyjur"
@@ -474,20 +557,23 @@ Template Name: Minha Página Pura
       }
     </script>
 
-    <!-- Carregamento de fontes e estilos não críticos -->
+    <!-- Carregamento otimizado de recursos não críticos -->
     <script>
-      function loadNonCriticalResources() {
-        const link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = "/assets/css/non-critical.css";
-        link.media = "all";
-        document.head.appendChild(link);
+      function loadFonts() {
+        if (!document.fonts || !document.fonts.ready) return;
+
+        document.fonts.ready.then(function () {
+          const link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href = "/assets/css/non-critical.css";
+          document.head.appendChild(link);
+        });
       }
 
-      if (window.requestIdleCallback) {
-        window.requestIdleCallback(loadNonCriticalResources);
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(loadFonts);
       } else {
-        window.addEventListener("load", loadNonCriticalResources);
+        window.addEventListener("load", loadFonts);
       }
     </script>
   </body>
