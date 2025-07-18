@@ -81,6 +81,14 @@ Template Name: Minha Página Pura
         color: inherit;
       }
 
+      /* Estilo global para parágrafos */
+      .easyjur-main p {
+        color: var(--easyjur-text);
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
       /* Header */
       .easyjur-main__header {
         --header-height: 5rem;
@@ -126,14 +134,6 @@ Template Name: Minha Página Pura
         font-weight: 700;
         line-height: 1.2;
         margin-bottom: 1.5rem;
-        color: var(--easyjur-text);
-      }
-
-      .easyjur-main-hero-banner p {
-        font-size: 1.125rem;
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-        max-width: 65ch;
         color: var(--easyjur-text);
       }
 
@@ -215,6 +215,10 @@ Template Name: Minha Página Pura
         background: var(--easyjur-red);
       }
 
+      .easyjur-platform-section p {
+        color: var(--easyjur-white);
+      }
+
       .easyjur-platform-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -224,11 +228,6 @@ Template Name: Minha Página Pura
 
       .easyjur-platform-content h2 {
         font-size: clamp(1.8rem, 4vw, 2.5rem);
-        margin-bottom: 1.5rem;
-        color: var(--easyjur-white);
-      }
-
-      .easyjur-platform-content p {
         margin-bottom: 1.5rem;
         color: var(--easyjur-white);
       }
@@ -270,7 +269,109 @@ Template Name: Minha Página Pura
         transform: translateY(-5px);
       }
 
-      /* Media Queries */
+      .easyjur-platform-box p {
+        color: var(--easyjur-text);
+      }
+
+      /* IV - Seção */
+      .easyjur-people-section {
+        padding: 4rem 0;
+        background: linear-gradient(90deg, #f7f7f7 0%, #eaeaea 100%);
+      }
+
+      .easyjur-people-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+      .easyjur-people-text {
+        flex: 1 1 40%;
+        max-width: 500px;
+      }
+
+      .easyjur-people-text h2 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        color: var(--easyjur-red);
+        margin-bottom: 1rem;
+      }
+
+      .easyjur-people-items {
+        flex: 1 1 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .easyjur-people-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .easyjur-people-item img {
+        flex-shrink: 0;
+      }
+
+      /*Card Sobreposto*/
+
+      .secao-com-sobreposicao {
+        position: relative;
+        padding-bottom: 6rem;
+      }
+
+      .card-sobreposto {
+        position: absolute;
+        bottom: -4rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+      }
+
+      /* Card Sobreposto */
+      .overlay-card {
+        width: 37.5rem;
+        max-width: 100%;
+        padding: 2rem;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        color: #ffffff;
+        font-family: sans-serif;
+      }
+
+      .bg-gray {
+        background-color: #80929b;
+      }
+
+      .overlay-card .icon {
+        width: 80px;
+        height: auto;
+      }
+
+      .overlay-card .text {
+        font-size: 1.25rem;
+        line-height: 1.5;
+        font-weight: 600;
+      }
+
+      /* Responsivo */
+      @media (max-width: 1024px) {
+        .easyjur-people-grid {
+          flex-direction: column;
+        }
+
+        .easyjur-people-text,
+        .easyjur-people-items {
+          flex: 1 1 100%;
+        }
+      }
+
       @media (min-width: 1024px) and (max-width: 1440px) {
         .easyjur-hero-image-wrapper {
           width: 42%;
@@ -313,6 +414,9 @@ Template Name: Minha Página Pura
         }
         .easyjur-platform-boxes > .easyjur-platform-box:last-child {
           grid-column: span 1;
+        }
+        .easyjur-people-item {
+          flex-direction: column;
         }
       }
     </style>
@@ -537,6 +641,64 @@ Template Name: Minha Página Pura
               <h3>Contratação e Gestão de Correspondentes</h3>
               <p>
                 Facilite a contratação e gestão de correspondentes jurídicos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="easyjur-people-section" aria-labelledby="people-heading">
+        <div class="easyjur-main__container easyjur-people-grid">
+          <div class="easyjur-people-text">
+            <h2 id="people-heading">
+              Coloque a IA para trabalhar para as pessoas
+            </h2>
+            <p>
+              Nosso compromisso vai além da tecnologia: entregamos impacto
+              mensurável e experiência que redefine a eficiência, a segurança e
+              a confiança no dia a dia da sua advocacia.
+            </p>
+          </div>
+
+          <div class="easyjur-people-items">
+            <div class="easyjur-people-item">
+              <img
+                src="https://easyjur.com/wp-content/uploads/2025/02/robotic-face.svg"
+                alt="Ícone IA personalizada"
+                width="65"
+                height="65"
+                loading="lazy"
+              />
+              <p>
+                Agentes de IA trabalham por você, permitindo foco no que
+                realmente importa, com inteligência personalizada que se adapta
+                ao seu fluxo.
+              </p>
+            </div>
+            <div class="easyjur-people-item">
+              <img
+                src="https://easyjur.com/wp-content/uploads/2025/02/ChartScaleUp.svg"
+                alt="Ícone de gráfico"
+                width="45"
+                height="45"
+                loading="lazy"
+              />
+              <p>
+                Dados em tempo real otimizam processos e decisões, centralizando
+                toda a informação em uma plataforma escalável e única.
+              </p>
+            </div>
+            <div class="easyjur-people-item">
+              <img
+                src="https://easyjur.com/wp-content/uploads/2025/02/ProjectBox.svg"
+                alt="Ícone de automação"
+                width="65"
+                height="65"
+                loading="lazy"
+              />
+              <p>
+                Automação completa para fluxos de trabalho, com ferramentas
+                inteligentes e suporte avançado para decisões estratégicas.
               </p>
             </div>
           </div>
