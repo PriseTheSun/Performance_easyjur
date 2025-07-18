@@ -58,6 +58,7 @@ Template Name: Minha Página Pura
         --easyjur-black: #1a1a1a;
         --easyjur-text: #54595f;
         --easyjur-border: #80929b2d;
+        --easyjur-hover-red: #c82333;
         font-family: "Inter", system-ui, sans-serif;
         color: var(--easyjur-black);
         background: var(--easyjur-white);
@@ -147,7 +148,7 @@ Template Name: Minha Página Pura
       }
 
       .easyjur-main__cta-button:hover {
-        background-color: #c82333;
+        background-color: var(--easyjur-hover-red);
         color: var(--easyjur-white);
         transform: translateY(-2px);
       }
@@ -242,11 +243,19 @@ Template Name: Minha Página Pura
         transition: all 0.3s ease;
         border-radius: 40px;
       }
+      .easyjur-main-white__cta-button:hover {
+        background-color: var(--easyjur-hover-red);
+        color: var(--easyjur-white);
+        transform: translateY(-2px);
+      }
 
       .easyjur-platform-boxes {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
+      }
+      .easyjur-platform-boxes > .easyjur-platform-box:last-child {
+        grid-column: span 2;
       }
 
       .easyjur-platform-box {
@@ -301,6 +310,9 @@ Template Name: Minha Página Pura
 
         .easyjur-platform-boxes {
           grid-template-columns: 1fr;
+        }
+        .easyjur-platform-boxes > .easyjur-platform-box:last-child {
+          grid-column: span 1;
         }
       }
     </style>
