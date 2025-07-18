@@ -277,6 +277,7 @@ Template Name: Minha Página Pura
       .easyjur-people-section {
         padding: 4rem 0;
         background: linear-gradient(90deg, #f7f7f7 0%, #eaeaea 100%);
+        height: 550px;
       }
 
       .easyjur-people-grid {
@@ -315,7 +316,43 @@ Template Name: Minha Página Pura
         flex-shrink: 0;
       }
 
+      /*V - Seção*/
+      .easyjur-excellence-section {
+        padding: 4rem 0;
+      }
+
+      .easyjur-excellence-box {
+        background-color: var(--easyjur-gray);
+        border-radius: 1rem;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        max-width: 75rem;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        top: -15rem;
+      }
+
+      .easyjur-excellence-text h2 {
+        color: var(--easyjur-white);
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        max-width: 40rem;
+        width: 100%;
+        font-weight: 600;
+        line-height: 1.4;
+        text-align: center;
+      }
+
       /* Responsivo */
+      @media (max-width: 1144px) {
+        .easyjur-excellence-box {
+          top: -9rem;
+        }
+      }
       @media (max-width: 1024px) {
         .easyjur-people-grid {
           flex-direction: column;
@@ -325,16 +362,6 @@ Template Name: Minha Página Pura
         .easyjur-people-items {
           flex: 1 1 100%;
         }
-      }
-
-      @media (min-width: 1024px) and (max-width: 1440px) {
-        .easyjur-hero-image-wrapper {
-          width: 42%;
-          max-width: 520px;
-        }
-      }
-
-      @media (max-width: 1024px) {
         .easyjur-hero-image-wrapper {
           position: relative;
           right: -20px;
@@ -352,6 +379,27 @@ Template Name: Minha Página Pura
         .easyjur-platform-grid {
           grid-template-columns: 1fr;
           gap: 2rem;
+        }
+        .easyjur-people-section {
+          height: auto;
+        }
+      }
+
+      @media (min-width: 1024px) and (max-width: 1440px) {
+        .easyjur-hero-image-wrapper {
+          width: 42%;
+          max-width: 520px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .easyjur-excellence-box {
+          flex-direction: row;
+          padding: 2rem 3rem;
+        }
+
+        .easyjur-excellence-text h2 {
+          text-align: left;
         }
       }
 
@@ -457,13 +505,22 @@ Template Name: Minha Página Pura
       >
         <div class="easyjur-main__container easyjur-section__grid">
           <div class="easyjur-section__image-wrapper">
-            <img
-              src="https://easyjur.com/wp-content/uploads/2025/02/Group-1000003548-1.png"
-              alt="Profissional sorrindo, representando liderança feminina no setor jurídico"
-              width="480"
-              height="480"
-              loading="lazy"
-            />
+            <picture>
+              <source
+                media="(max-width: 767px)"
+                srcset="
+                  https://easyjur.com/wp-content/uploads/2025/03/Group-1000003568.png
+                "
+              />
+
+              <img
+                src="https://easyjur.com/wp-content/uploads/2025/02/Group-1000003548-1.png"
+                alt="Profissional sorrindo, representando liderança feminina no setor jurídico"
+                width="480"
+                height="480"
+                loading="lazy"
+              />
+            </picture>
           </div>
 
           <div class="easyjur-section__content">
@@ -655,6 +712,43 @@ Template Name: Minha Página Pura
                 Automação completa para fluxos de trabalho, com ferramentas
                 inteligentes e suporte avançado para decisões estratégicas.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="easyjur-excellence-section"
+        aria-labelledby="excellence-heading"
+      >
+        <div class="easyjur-main__container">
+          <div class="easyjur-excellence-box">
+            <div class="easyjur-excellence-icon">
+              <picture>
+                <!-- Nova imagem para mobile -->
+                <source
+                  media="(max-width: 767px)"
+                  srcset="
+                    https://easyjur.com/wp-content/uploads/2025/03/logo-easyjur-07_1.svg
+                  "
+                  width="100"
+                  height="100"
+                />
+                <!-- Imagem original para desktop -->
+                <img
+                  src="https://easyjur.com/wp-content/uploads/2025/02/ej-cloud-services.png"
+                  alt="Rede interconectada representando excelência tecnológica"
+                  width="450"
+                  height="450"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+            <div class="easyjur-excellence-text">
+              <h2 id="excellence-heading">
+                Para quem exige mais do que uma solução.<br />
+                Para quem exige excelência.
+              </h2>
             </div>
           </div>
         </div>
