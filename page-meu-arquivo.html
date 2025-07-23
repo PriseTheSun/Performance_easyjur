@@ -484,6 +484,148 @@ Template Name: Minha Página Pura
         transform: translateY(-2px);
       }
 
+      /* Seção de Tabs - Estilo consistente com o restante */
+      .easyjur-tabs-section {
+        padding: 4rem 0;
+      }
+
+      .easyjur-tabs-container {
+        max-width: 75rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .easyjur-tabs-wrapper {
+        display: flex;
+        flex-direction: column;
+        background: var(--easyjur-white);
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .easyjur-tabs-header {
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--easyjur-border);
+      }
+
+      .easyjur-tabs-header h2 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        color: var(--easyjur-text);
+        margin-bottom: 0.5rem;
+      }
+
+      .easyjur-tabs-header p {
+        color: var(--easyjur-text);
+      }
+
+      .easyjur-tabs-content {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .easyjur-tabs-menu {
+        width: 30%;
+        padding: 1.5rem;
+        background: var(--easyjur-white);
+        border-right: 1px solid var(--easyjur-border);
+      }
+
+      .easyjur-tabs-menu h3 {
+        color: var(--easyjur-gray);
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+      }
+
+      .easyjur-tabs-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .easyjur-tab-item {
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+        border-radius: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 0.95rem;
+        color: var(--easyjur-gray);
+        transition: all 0.3s ease;
+        background-color: var(--easyjur-off-white);
+      }
+
+      .easyjur-tab-item.active,
+      .easyjur-tab-item:hover {
+        background: var(--easyjur-red);
+        color: var(--easyjur-white);
+      }
+
+      .easyjur-tab-item img {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+      }
+
+      .easyjur-tabs-panels {
+        width: 70%;
+        padding: 2rem;
+        background: var(--easyjur-white);
+      }
+
+      .easyjur-tab-panel {
+        display: none;
+        animation: fadeIn 0.3s ease;
+      }
+
+      .easyjur-tab-panel.active {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .easyjur-tab-image {
+        flex: 1 1 40%;
+        min-width: 100%;
+      }
+
+      .easyjur-tab-image img {
+        width: 100%;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .easyjur-tab-text {
+        flex: 1 1 55%;
+      }
+
+      .easyjur-tab-text h3 {
+        font-size: 1.75rem;
+        color: var(--easyjur-red);
+        margin-bottom: 1rem;
+        line-height: 1.3;
+      }
+
+      .easyjur-tab-text p {
+        margin-bottom: 1.5rem;
+        color: var(--easyjur-text);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
       /* Responsivo */
       @media (max-width: 1144px) {
         .easyjur-excellence-box {
@@ -533,6 +675,22 @@ Template Name: Minha Página Pura
           position: relative;
           bottom: -2rem;
         }
+
+        /* Tabs responsivo */
+        .easyjur-tabs-content {
+          flex-direction: column;
+        }
+        .easyjur-tabs-menu {
+          width: 100%;
+          border-right: none;
+          border-bottom: 1px solid var(--easyjur-border);
+        }
+        .easyjur-tabs-panels {
+          width: 100%;
+        }
+        .easyjur-tab-panel.active {
+          flex-direction: column;
+        }
       }
 
       @media (min-width: 1024px) and (max-width: 1440px) {
@@ -579,6 +737,25 @@ Template Name: Minha Página Pura
         }
         .easyjur-cta-free-box {
           flex-direction: column-reverse;
+        }
+
+        /* Ajustes finos para mobile */
+        .easyjur-tabs-menu h3 {
+          text-align: center;
+        }
+        .easyjur-tab-item {
+          justify-content: center;
+          text-align: center;
+        }
+        .easyjur-tab-text h3 {
+          font-size: 1.5rem;
+          text-align: center;
+        }
+        .easyjur-tab-text p {
+          text-align: center;
+        }
+        .easyjur-tab-text .easyjur-main__cta-button {
+          margin: 0 auto;
         }
       }
     </style>
@@ -842,7 +1019,7 @@ Template Name: Minha Página Pura
               />
               <p>
                 Agentes de IA trabalham por você, permitindo foco no que
-                realmente importa, com inteligência personalizada que se adapta
+                realmente importta, com inteligência personalizada que se adapta
                 ao seu fluxo.
               </p>
             </div>
@@ -1001,6 +1178,399 @@ Template Name: Minha Página Pura
           </div>
         </div>
       </section>
+
+      <!-- Seção de Tabs - Estilo consistente -->
+      <section class="easyjur-tabs-section" aria-labelledby="tabs-heading">
+        <div class="easyjur-tabs-container">
+          <div class="easyjur-tabs-wrapper">
+            <div class="easyjur-tabs-header">
+              <h2 id="tabs-heading">
+                Gestão jurídica integrada de ponta a ponta
+              </h2>
+              <p>
+                Descubra como a EasyJur revoluciona sua gestão jurídica com
+                inteligência artificial
+              </p>
+            </div>
+
+            <div class="easyjur-tabs-content">
+              <div class="easyjur-tabs-menu">
+                <h3>Funcionalidades</h3>
+                <ul class="easyjur-tabs-list">
+                  <li class="easyjur-tab-item active" data-tab="dashboard">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M19 5v2h-4V5zM9 5v6H5V5zm10 8v6h-4v-6zM9 17v2H5v-2zM21 3h-8v6h8zM11 3H3v10h8zm10 8h-8v10h8zm-10 4H3v6h8z"
+                      />
+                    </svg>
+                    Dashboard Analytics
+                  </li>
+                  <li class="easyjur-tab-item" data-tab="consultiva">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97s-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1s.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64z"
+                      />
+                    </svg>
+                    Gestão da Área Consultiva
+                  </li>
+                  <li class="easyjur-tab-item" data-tab="contencioso">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h6l2 2h8q.825 0 1.413.588T22 8H4v10l2.4-8h17.1l-2.575 8.575q-.2.65-.737 1.038T19 20z"
+                      />
+                    </svg>
+                    Gestão Completa Contencioso
+                  </li>
+                  <li class="easyjur-tab-item" data-tab="documentos">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M8 1v3.5A1.5 1.5 0 0 0 9.498 6h3.5v1.035a2.55 2.55 0 0 0-1.37.712l-4.287 4.287a3.8 3.8 0 0 0-.994 1.755l-.302 1.209H4.5a1.5 1.5 0 0 1-1.5-1.5V2.5A1.5 1.5 0 0 1 4.5 1zm4.998 7.06a1.56 1.56 0 0 0-.662.394L8.05 12.74a2.8 2.8 0 0 0-.73 1.29l-.303 1.211a.61.61 0 0 0 .738.74l1.211-.303a2.8 2.8 0 0 0 1.29-.73l4.288-4.288a1.56 1.56 0 0 0-1.545-2.6m-4-6.81V4.5a.5.5 0 0 0 .5.5h3.25z"
+                      />
+                    </svg>
+                    Automatização de Documentos
+                  </li>
+                  <li class="easyjur-tab-item" data-tab="prazos">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="currentColor"
+                        fill-rule="evenodd"
+                        d="M12 1.25C6.063 1.25 1.25 6.063 1.25 12S6.063 22.75 12 22.75S22.75 17.937 22.75 12S17.937 1.25 12 1.25M12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h6a.75.75 0 0 0 0-1.5h-5.25z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    Controle de Prazos e Audiências com IA
+                  </li>
+
+                  <li class="easyjur-tab-item" data-tab="comerial">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 512 512"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M144 16c0-8.8-7.2-16-16-16s-16 7.2-16 16v16H96c-8.8 0-16 7.2-16 16s7.2 16 16 16h16v32H60.2C49.1 96 40 105.1 40 116.2c0 2.5.5 4.9 1.3 7.3L73.8 208H72c-13.3 0-24 10.7-24 24s10.7 24 24 24h4L60 384h136l-16-128h4c13.3 0 24-10.7 24-24s-10.7-24-24-24h-1.8l32.5-84.5c.9-2.3 1.3-4.8 1.3-7.3c0-11.2-9.1-20.2-20.2-20.2H144V64h16c8.8 0 16-7.2 16-16s-7.2-16-16-16h-16zM48 416L4.8 473.6C1.7 477.8 0 482.8 0 488c0 13.3 10.7 24 24 24h208c13.3 0 24-10.7 24-24c0-5.2-1.7-10.2-4.8-14.4L208 416zm288 0l-43.2 57.6c-3.1 4.2-4.8 9.2-4.8 14.4c0 13.3 10.7 24 24 24h176c13.3 0 24-10.7 24-24c0-5.2-1.7-10.2-4.8-14.4L464 416zm-32-208v51.9c0 7.8 2.8 15.3 8 21.1l27.2 31l-2.2 72h125.5l-3.3-72l28.3-30.8c5.4-5.9 8.5-13.6 8.5-21.7V208c0-8.8-7.2-16-16-16h-16c-8.8 0-16 7.2-16 16v16h-24v-16c0-8.8-7.2-16-16-16h-16c-8.8 0-16 7.2-16 16v16h-24v-16c0-8.8-7.2-16-16-16h-16c-8.8 0-16 7.2-16 16m80 96c0-8.8 7.2-16 16-16s16 7.2 16 16v32h-32z"
+                      />
+                    </svg>
+                    Gestão Comercial Estratégica
+                  </li>
+
+                  <li class="easyjur-tab-item" data-tab="financeiro">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="33"
+                      height="33"
+                      viewBox="0 0 56 56"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M4 28C4 14.745 14.745 4 28 4s24 10.745 24 24s-10.745 24-24 24S4 41.255 4 28m24.573 1.744c2.974.732 3.865 1.702 3.865 3.34c0 1.702-1.145 2.99-3.865 3.197zm-1.797-3.673c-2.544-.637-3.499-1.702-3.499-3.15s1.209-2.767 3.5-3.053zm1.797.429v-6.632c2.036.254 3.467 1.415 3.674 3.42h3.308c-.127-3.61-3.006-5.996-6.982-6.315v-2.687h-1.797v2.687c-4.008.303-6.87 2.656-6.87 6.219c0 3.228 2.179 5.042 6.218 5.98l.652.159v6.934c-2.56-.27-3.769-1.638-4.055-3.499h-3.292c.11 3.817 3.308 6.091 7.347 6.394v2.671h1.797V39.16c4.056-.287 7.237-2.497 7.237-6.394c0-3.387-2.29-5.105-6.473-6.075z"
+                      />
+                    </svg>
+                    Fluxo de Caixa Financeiro Automatizado
+                  </li>
+
+                  <li class="easyjur-tab-item" data-tab="operacional">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M14.754 10c.966 0 1.75.784 1.75 1.75v4.749a4.501 4.501 0 0 1-9.002 0V11.75c0-.966.783-1.75 1.75-1.75zm-7.623 0a2.7 2.7 0 0 0-.62 1.53l-.01.22v4.749c0 .847.192 1.649.534 2.365Q6.539 18.999 6 19a4 4 0 0 1-4-4.001V11.75a1.75 1.75 0 0 1 1.606-1.744L3.75 10zm9.744 0h3.375c.966 0 1.75.784 1.75 1.75V15a4 4 0 0 1-5.03 3.866c.3-.628.484-1.32.525-2.052l.009-.315V11.75c0-.665-.236-1.275-.63-1.75M12 3a3 3 0 1 1 0 6a3 3 0 0 1 0-6m6.5 1a2.5 2.5 0 1 1 0 5a2.5 2.5 0 0 1 0-5m-13 0a2.5 2.5 0 1 1 0 5a2.5 2.5 0 0 1 0-5"
+                      />
+                    </svg>
+                    Delegue Toda Sua Rotina Operacional
+                  </li>
+                </ul>
+              </div>
+
+              <div class="easyjur-tabs-panels">
+                <div id="dashboard" class="easyjur-tab-panel active">
+                  <div class="easyjur-tab-image">
+                    <img
+                      src="https://easyjur.com/wp-content/uploads/2025/02/dashboard-analytics.png"
+                      alt="Dashboard Analytics da EasyJur"
+                      loading="lazy"
+                      width="600"
+                      height="400"
+                    />
+                  </div>
+                  <div class="easyjur-tab-text">
+                    <h3>Dashboard Analytics</h3>
+                    <p>
+                      Acompanhe os principais indicadores do seu escritório em
+                      tempo real e tome decisões mais estratégicas com insights
+                      visuais e gráficos interativos.
+                    </p>
+                    <p>
+                      Com gráficos intuitivos e uma visão 360°, você transforma
+                      informações complexas em insights estratégicos, garantindo
+                      decisões mais rápidas, precisas e orientadas para
+                      resultados.
+                    </p>
+                    <a
+                      href="/agendar-demo"
+                      class="easyjur-main__cta-button"
+                      aria-label="Agendar demonstração do Dashboard"
+                      >QUERO CONHECER A EASYJUR</a
+                    >
+                  </div>
+                </div>
+
+                <div id="consultiva" class="easyjur-tab-panel">
+                  <div class="easyjur-tab-image">
+                    <img
+                      src="https://easyjur.com/wp-content/uploads/2025/02/consultivo-II.png"
+                      alt="Gestão da Área Consultiva"
+                      loading="lazy"
+                      width="600"
+                      height="400"
+                    />
+                  </div>
+                  <div class="easyjur-tab-text">
+                    <h3>Gestão da Área Consultiva</h3>
+                    <p>
+                      Organize e otimize os processos consultivos do seu
+                      escritório, garantindo mais eficiência no atendimento aos
+                      clientes.
+                    </p>
+                    <p>
+                      Aprimore a gestão jurídica com soluções estratégicas,
+                      elevando a qualidade e a rapidez na prestação dos
+                      serviços.
+                    </p>
+                    <a
+                      href="/agendar-demo"
+                      class="easyjur-main__cta-button"
+                      aria-label="Agendar demonstração da Gestão Consultiva"
+                      >QUERO CONHECER A EASYJUR</a
+                    >
+                  </div>
+                </div>
+
+                <div id="contencioso" class="easyjur-tab-panel">
+                  <div class="easyjur-tab-image">
+                    <img
+                      src="https://easyjur.com/wp-content/uploads/2025/02/contenciosoII.png"
+                      alt="Gestão Completa Contencioso"
+                      loading="lazy"
+                      width="600"
+                      height="400"
+                    />
+                  </div>
+                  <div class="easyjur-tab-text">
+                    <h3>Gestão Completa Contencioso</h3>
+                    <p>
+                      Gerencie todos os casos contenciosos de forma
+                      centralizada, acompanhando prazos, processos e
+                      movimentações jurídicas.
+                    </p>
+                    <p>
+                      Organize suas demandas jurídicas com eficiência,
+                      garantindo controle total sobre prazos e atualizações
+                      processuais.
+                    </p>
+                    <a
+                      href="/agendar-demo"
+                      class="easyjur-main__cta-button"
+                      aria-label="Agendar demonstração da Gestão Consultiva"
+                      >QUERO CONHECER A EASYJUR</a
+                    >
+                  </div>
+                </div>
+
+                <div id="documentos" class="easyjur-tab-panel">
+                  <div class="easyjur-tab-image">
+                    <img
+                      src="https://easyjur.com/wp-content/uploads/2025/02/automatizacao-de-docs.png"
+                      alt="Automatização de Documentos"
+                      loading="lazy"
+                      width="600"
+                      height="400"
+                    />
+                  </div>
+                  <div class="easyjur-tab-text">
+                    <h3>Automatização de Documentos</h3>
+                    <p>
+                      Reduza o tempo gasto com burocracias utilizando
+                      ferramentas de automação para criação e gerenciamento de
+                      documentos jurídicos.
+                    </p>
+                    <p>
+                      Aumente sua produtividade automatizando tarefas
+                      repetitivas e otimize a gestão de processos jurídicos de
+                      forma eficiente.
+                    </p>
+                    <a
+                      href="/agendar-demo"
+                      class="easyjur-main__cta-button"
+                      aria-label="Agendar demonstração da Gestão Consultiva"
+                      >QUERO CONHECER A EASYJUR</a
+                    >
+                  </div>
+                </div>
+
+                <div id="prazos" class="easyjur-tab-panel">
+                  <div class="easyjur-tab-image">
+                    <img
+                      src="https://easyjur.com/wp-content/uploads/2025/02/controle-prazos.png"
+                      alt="Controle de Prazos e Audiências com IA"
+                      loading="lazy"
+                      width="600"
+                      height="400"
+                    />
+                  </div>
+                  <div class="easyjur-tab-text">
+                    <h3>Controle de Prazos e Audiências com IA</h3>
+                    <p>
+                      Nunca mais perca um prazo! Utilize inteligência artificial
+                      para monitoramento e alertas automáticos de compromissos e
+                      prazos processuais.
+                    </p>
+                    <p>
+                      Garanta sua tranquilidade! Receba notificações
+                      instantâneas e evite atrasos com um sistema inteligente e
+                      eficiente.
+                    </p>
+                    <a
+                      href="/agendar-demo"
+                      class="easyjur-main__cta-button"
+                      aria-label="Agendar demonstração da Gestão Consultiva"
+                      >QUERO CONHECER A EASYJUR</a
+                    >
+                  </div>
+                </div>
+
+                <div id="comerial" class="easyjur-tab-panel">
+                  <div class="easyjur-tab-image">
+                    <img
+                      src="https://easyjur.com/wp-content/uploads/2025/02/novos-negocios.png"
+                      alt="Gestão Comercial Estratégica"
+                      loading="lazy"
+                      width="600"
+                      height="400"
+                    />
+                  </div>
+                  <div class="easyjur-tab-text">
+                    <h3>Gestão Comercial Estratégica</h3>
+                    <p>
+                      Potencialize seus resultados com uma gestão comercial
+                      eficaz, acompanhando leads, oportunidades e fechamentos de
+                      contratos.
+                    </p>
+                    <p>
+                      Otimize seus processos e aumente sua produtividade,
+                      gerenciando negociações, clientes e desempenho da equipe
+                      com mais precisão e controle.
+                    </p>
+                    <a
+                      href="/agendar-demo"
+                      class="easyjur-main__cta-button"
+                      aria-label="Agendar demonstração da Gestão Consultiva"
+                      >QUERO CONHECER A EASYJUR</a
+                    >
+                  </div>
+                </div>
+
+                <div id="financeiro" class="easyjur-tab-panel">
+                  <div class="easyjur-tab-image">
+                    <img
+                      src="https://easyjur.com/wp-content/uploads/2025/02/fluxo-de-caixa.png"
+                      alt="Fluxo de Caixa Financeiro Automatizado"
+                      loading="lazy"
+                      width="600"
+                      height="400"
+                    />
+                  </div>
+                  <div class="easyjur-tab-text">
+                    <h3>Fluxo de Caixa Financeiro Automatizado</h3>
+                    <p>
+                      Controle as finanças do seu escritório de forma
+                      centralizada e automática, garantindo previsibilidade e
+                      segurança na gestão do fluxo de caixa.
+                    </p>
+                    <p>
+                      Monitore receitas e despesas em tempo real, otimizando
+                      processos financeiros e assegurando maior eficiência na
+                      administração contábil.
+                    </p>
+                    <a
+                      href="/agendar-demo"
+                      class="easyjur-main__cta-button"
+                      aria-label="Agendar demonstração da Gestão Consultiva"
+                      >QUERO CONHECER A EASYJUR</a
+                    >
+                  </div>
+                </div>
+
+                <div id="operacional" class="easyjur-tab-panel">
+                  <div class="easyjur-tab-image">
+                    <img
+                      src="https://easyjur.com/wp-content/uploads/2025/02/workflow.png"
+                      alt="Delegue Toda Sua Rotina Operacional"
+                      loading="lazy"
+                      width="600"
+                      height="400"
+                    />
+                  </div>
+                  <div class="easyjur-tab-text">
+                    <h3>Delegue Toda Sua Rotina Operacional</h3>
+                    <p>
+                      Libere tempo para o que realmente importa! Automatize
+                      tarefas repetitivas e otimize a produtividade da equipe
+                      com tecnologia jurídica avançada
+                    </p>
+                    <p>
+                      Simplifique processos e reduza erros! Utilize soluções
+                      inteligentes para agilizar seu fluxo de trabalho e
+                      aumentar a eficiência do seu escritório.
+                    </p>
+                    <a
+                      href="/agendar-demo"
+                      class="easyjur-main__cta-button"
+                      aria-label="Agendar demonstração da Gestão Consultiva"
+                      >QUERO CONHECER A EASYJUR</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Schema Markup -->
@@ -1046,6 +1616,25 @@ Template Name: Minha Página Pura
       } else {
         window.addEventListener("load", loadFonts);
       }
+
+      // Script para controle das tabs
+      document.addEventListener("DOMContentLoaded", function () {
+        const tabItems = document.querySelectorAll(".easyjur-tab-item");
+        const tabPanels = document.querySelectorAll(".easyjur-tab-panel");
+
+        tabItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            // Remove classe active de todos os itens e painéis
+            tabItems.forEach((tab) => tab.classList.remove("active"));
+            tabPanels.forEach((panel) => panel.classList.remove("active"));
+
+            // Adiciona classe active ao item clicado
+            this.classList.add("active");
+            const targetTab = this.getAttribute("data-tab");
+            document.getElementById(targetTab).classList.add("active");
+          });
+        });
+      });
     </script>
   </body>
 </html>
